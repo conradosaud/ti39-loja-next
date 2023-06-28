@@ -1,7 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react';
-
 import { buscaTodos } from '@/model/produtos';
+
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -23,12 +24,14 @@ export default function Home() {
             {
                 produtos == 0 ? <p> Carregando... </p> :
                 produtos.map( produto => 
-                    <div key={ produto.id } >
-                        <p> { produto.nome } </p>
-                        <p> { produto.preco } </p>
-                        <img src={ produto.imagem } />
-                        <hr/>
-                    </div>
+                    <Link href={ "/produto/" + produto.id } >
+                        <div key={ produto.id } >
+                            <p> { produto.nome } </p>
+                            <p> { produto.preco } </p>
+                            <img src={ produto.imagem } width="200" />
+                            <hr/>
+                        </div>
+                    </Link>
                 )
                 
                 
