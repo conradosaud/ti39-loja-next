@@ -8,9 +8,6 @@ export default function Carrinho(){
 
     useEffect(()=> {
 
-        let objeto = localStorage.getItem("carrinho")
-        objeto = JSON.parse( objeto );
-
         async function dados(){
             const lista = objeto.map( o => o.id );
             const resposta = await buscaLista( lista );
