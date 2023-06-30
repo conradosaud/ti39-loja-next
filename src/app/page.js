@@ -19,7 +19,7 @@ export default function Home() {
 
     return (
         <div>
-            
+            <h1> Atividades TI 39 </h1>
             <div className="grid grid-cols-3 place-items-center" >
 
                 {
