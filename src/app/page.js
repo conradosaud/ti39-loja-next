@@ -18,17 +18,20 @@ export default function Home() {
     }, [] )
 
     return (
-        <div className="grid grid-cols-3 place-items-center" >
+        <div>
+            
+            <div className="grid grid-cols-3 place-items-center" >
 
-            {
-                produtos == 0 ? <p> Carregando... </p> :
-                produtos.map( produto => 
-                    <Link href={ "/produto/" + produto.id } >
-                        <Produto produto={produto} largura={150} />
-                    </Link>
-                )
-            }
+                {
+                    produtos == 0 ? <p> Carregando... </p> :
+                    produtos.map( produto => 
+                        <Link href={ "/produto/" + produto.id } >
+                            <Produto produto={produto} largura={150} />
+                        </Link>
+                    )
+                }
 
+            </div>
         </div>
     )
 }
